@@ -1,15 +1,5 @@
 services:
   - type: web
     name: finanzenpg
-    env: java
+    runtime: docker
     plan: free
-    buildCommand: |
-      echo "JAVA_HOME before setting: $JAVA_HOME"
-      export JAVA_HOME=/opt/render/project/java
-      echo "JAVA_HOME after setting: $JAVA_HOME"
-      chmod +x mvnw
-      ./mvnw clean install
-    startCommand: |
-      export JAVA_HOME=/opt/render/project/java
-      echo "JAVA_HOME during start: $JAVA_HOME"
-      ./mvnw spring-boot:run

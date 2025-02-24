@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Ausgaben Eintragen</title>
+</head>
+<body>
+    <h2>Ausgaben Eintragen</h2>
+    <form action="/api/ausgaben" method="post">
+        <label>Datum:</label>
+        <input type="date" name="datum" required><br><br>
+
+        <label>Betrag (€):</label>
+        <input type="number" name="betrag" step="0.01" required><br><br>
+
+        <label>Kategorie:</label>
+        <input type="text" name="kategorie" required><br><br>
+
+        <label>Beschreibung:</label>
+        <input type="text" name="beschreibung"><br><br>
+
+        <button type="submit">Speichern</button>
+    </form>
+
+    <h3>Gespeicherte Ausgaben:</h3>
+    <ul>
+        <li th:each="ausgabe : ${ausgaben}">
+            <span th:text="${ausgabe.datum}"></span> -
+            <span th:text="${ausgabe.betrag}"></span>€ -
+            <span th:text="${ausgabe.kategorie}"></span> -
+            <span th:text="${ausgabe.beschreibung}"></span>
+        </li>
+    </ul>
+</body>
+</html>

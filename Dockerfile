@@ -1,17 +1,17 @@
-# Verwende offizielles Java 17-Image
+# Verwende offizielles Java 17 JDK-Image
 FROM eclipse-temurin:17-jdk
 
-# Arbeitsverzeichnis innerhalb des Containers
+# Arbeitsverzeichnis im Container
 WORKDIR /app
 
-# Kopiere den gesamten Projektinhalt in das Arbeitsverzeichnis
+# Kopiere alle Projektdateien in das Arbeitsverzeichnis
 COPY . /app
 
-# Baue das Projekt (Tests werden übersprungen)
+# Baue das Projekt (Tests überspringen)
 RUN chmod +x mvnw && ./mvnw clean package -DskipTests
 
-# Exponiere Port 8080
+# Port 8080 öffnen
 EXPOSE 8080
 
-# Starte die Anwendung
+# Starte die Spring Boot-Anwendung
 ENTRYPOINT ["java", "-jar", "target/*.jar"]

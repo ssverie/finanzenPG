@@ -3,12 +3,3 @@ services:
     name: finanzenpg
     runtime: docker
     plan: free
-    buildCommand: |
-      export JAVA_HOME=/opt/render/project/.render/java/openjdk-17
-      export PATH=$JAVA_HOME/bin:$PATH
-      chmod +x mvnw
-      ./mvnw clean package -DskipTests
-    startCommand: |
-      export JAVA_HOME=/opt/render/project/.render/java/openjdk-17
-      export PATH=$JAVA_HOME/bin:$PATH
-      java -jar target/*.jar

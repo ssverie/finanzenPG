@@ -28,8 +28,11 @@ public class AusgabeController {
     public String speichereAusgabe(@RequestParam String datum,
                                    @RequestParam Double betrag,
                                    @RequestParam String kategorie,
-                                   @RequestParam String beschreibung) {
-        repository.save(new Ausgabe(LocalDate.parse(datum), betrag, kategorie, beschreibung));
+                                   @RequestParam String beschreibung,
+                                   @RequestParam String grund
+                                   ) {
+        repository.save(new Ausgabe(LocalDate.parse(datum), betrag, 
+        		kategorie, beschreibung, grund));
         return "redirect:/";
     }
 }

@@ -12,14 +12,17 @@ public class Ausgabe {
     private Double betrag;
     private String kategorie;
     private String beschreibung;
+    private String grund; // <-- NEUES FELD
 
     public Ausgabe() {}
 
-    public Ausgabe(LocalDate datum, Double betrag, String kategorie, String beschreibung) {
+    public Ausgabe(LocalDate datum, Double betrag, String kategorie, 
+    		String beschreibung, String grund) {
         this.datum = datum;
         this.betrag = betrag;
         this.kategorie = kategorie;
         this.beschreibung = beschreibung;
+        this.grund = grund;
     }
 
     // Getter und Setter
@@ -32,4 +35,6 @@ public class Ausgabe {
     public void setKategorie(String kategorie) { this.kategorie = kategorie; }
     public String getBeschreibung() { return beschreibung; }
     public void setBeschreibung(String beschreibung) { this.beschreibung = beschreibung; }
+    public String getGrund() { return grund; }
+    public void setGrund(String grund) { this.grund = grund; }
 }

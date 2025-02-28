@@ -36,5 +36,14 @@
             <span th:text="${ausgabe.grund}"></span>
         </li>
     </ul>
+    
+    <h3>Gespeicherte Anreden:</h3>
+		<ul>
+    		<li th:each="anrede : ${anreden}">
+        	<span th:text="${anrede.geschlecht}"></span>
+    	</li>
+	</ul>
+
+
 </body>
 </html>

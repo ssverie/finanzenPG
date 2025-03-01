@@ -6,9 +6,11 @@
     <title>Ausgaben Eintragen</title>
 </head>
 <body>
-    <h2>Ausgaben Eintragen</h2>
-    <form action="/api/ausgaben" method="post">
-        <label>Datum:</label>
+	
+    <h2>Neue Ausgabe hinzufügen:</h2>
+	<form action="/save-ausgabe" method="post">
+    	
+    	<label>Datum:</label>
         <input type="date" name="datum" required><br><br>
 
         <label>Betrag (€):</label>
@@ -22,9 +24,9 @@
         
         <label>Grund:</label>
         <input type="text" name="grund"><br><br>
-
-        <button type="submit">Speichern</button>
-    </form>
+    	
+    <button type="submit">Speichern</button>
+</form>
 
     <h3>Gespeicherte Ausgaben:</h3>
     <ul>
